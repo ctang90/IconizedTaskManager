@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<script>
+	function allowDrop(ev) {
+	    ev.preventDefault();
+	}
+
+	function drag(ev) {
+	    ev.dataTransfer.setData("text", ev.target.id);
+	}
+	function drop(ev) {
+	    ev.preventDefault();
+	    var data = ev.dataTransfer.getData("text");
+	    console.log(data);
+	    ev.target.appendChild(document.getElementById(data));
+	}
+</script>
+<body>
+	<h1 class="text-center">Task manager</h1>
+	<div class="row">
+		<div class="col-md-1">Mon</div>
+		<div class="col-md-1">Tue</div>
+		<div class="col-md-1">Wed</div>
+		<div class="col-md-1">Thu</div>
+		<div class="col-md-1">Fri</div>
+		<div class="col-md-1">Sat</div>
+		<div class="col-md-1">Sun</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+			<div class="well" id="well1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+		<div class="col-md-1">
+			<div class="well" id="well7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+	</div>
+	<h2>To-do List:</h2>
+	<div class="row">
+		<div class="col-md-1">
+			<i class="fa fa-bicycle" id="fa-bicycle" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-amazon" id="fa-amazon" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-automobile" id="fa-automobile" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-camera-retro" id="fa-camera-retro" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-dot-circle-o" id="fa-dot-circle-o" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-dollar" id="fa-dollar" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-dribbble" id="fa-dribbble" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-eye" id="fa-eye" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-facebook" id="fa-facebook" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-gamepad" id="fa-gamepad" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-glass" id="fa-glass" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+		<div class="col-md-1">
+			<i class="fa fa-laptop" id="fa-laptop" draggable="true" ondragstart="drag(event)"></i>
+		</div>
+	</div>
+</body>
